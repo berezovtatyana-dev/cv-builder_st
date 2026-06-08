@@ -80,8 +80,9 @@ function cvReducer(state, action) {
             return state;
     }
 }
+const initialState = loadInitialState();
 export const CVProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(cvReducer, initialState());
+    const [state, dispatch] = useReducer(cvReducer, initialState);
         
     useEffect(() => {
         localStorage.setItem('cv_data', JSON.stringify(state));
