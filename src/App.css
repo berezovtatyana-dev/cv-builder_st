@@ -1,10 +1,13 @@
 .grid{
-  display: flexbox;
+  display: flex;
+  /* grid-row: 100px; */
 
 }
 .FormPanel{
+  width: 50%;
   background-color: antiquewhite;
 }
 .PreviewPanel{
+  width: 50%;
   background-color: aliceblue;
 }

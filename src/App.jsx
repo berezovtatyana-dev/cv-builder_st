@@ -1,7 +1,6 @@
-import { useState } from 'react';
-
 import { CVProvider } from './context/CVContext';
-import './App.css'
+import './App.css';
+import FormPanel from './components/FormPanel';
 
 function App() {
   return (
@@ -14,8 +13,14 @@ function App() {
         </header>
         <main>
           <div className='Grid'>
-            <div className='FormPanel'>FormPanel</div>
-            <div className='PreviewPanel'>PreviewPanel</div>
+            <div className='FormPanel'>
+              FormPanel
+              <FormPanel />
+              </div>
+            <div className='PreviewPanel'>
+              PreviewPanel
+              {/* <PreviewPanel /> */}
+            </div>
           </div>
         </main>
       
