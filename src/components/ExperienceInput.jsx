@@ -21,8 +21,8 @@ const ExperienceInput = ({ experience }) => {
             </label>
             <input 
             type="text"
-            name="Company"
-            value={experience.Company}
+            name="company"
+            value={experience.company}
             onChange={handleChange}
             placeholder="ГазПром"
             />
