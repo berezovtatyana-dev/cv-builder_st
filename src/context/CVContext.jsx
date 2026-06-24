@@ -39,6 +39,7 @@ function cvReducer(state, action) {
                     [action.payload.key]: action.payload.value
                 }
             };
+            // EDUCATION
         case 'ADD_EDUCATION':
             const newId = state.education.length > 0 ? Math.max(...state.education.map(edu => edu.id)) + 1 : 1;
             return {
@@ -53,7 +54,13 @@ function cvReducer(state, action) {
                     edu.id === action.payload.id ? { ...edu, [action.payload.key]: action.payload.value } : edu
                 )
             };
+        case 'REMOVE_EDUCATION':
+            return {
+                ...state,
+                education: state.education.filter(edu => edu.id !== action.payload.id)
+            };
         
+            // EXPERIENCE
         case 'ADD_EXPERIENCE':  {
             const newExpId = state.experience.length > 0 ? Math.max(...state.experience.map(exp => exp.id)) + 1 : 1;
             return {
@@ -68,6 +75,12 @@ function cvReducer(state, action) {
                 experience: state.experience.map(exp => 
                     exp.id === action.payload.id ? { ...exp, [action.payload.key]: action.payload.value } : exp
                 )
+            };
+
+        case 'REMOVE_EXPERIENCE':
+            return {
+                ...state,
+                experience: state.experience.filter(exp => exp.id !== action.payload.id)
             };
 
         

@@ -14,6 +14,15 @@ const EducationInput = ({ education }) => {
         });
     };
 
+    const handleRemove = () => {
+        if (window.confirm('Удалить эту запись об образовании?')) {
+            dispatch({
+                type: 'REMOVE_EDUCATION',
+                payload: { id: education.id }
+            });
+        }
+    };
+
     return (
         <div style={{border: '2px solid black'}}>
             <label>
@@ -49,6 +58,19 @@ const EducationInput = ({ education }) => {
             onChange={handleChange}
             placeholder="2020-2025"
             />
+        </div>
+        <div>
+            <button 
+                onClick={handleRemove}
+                style={{
+                    backgroundColor: 'red',
+                    color: 'white',
+                    borderRadius: '4px',
+                    padding: '4px',
+                }}
+            >
+                Удалить запись
+            </button>
         </div>
 
 
