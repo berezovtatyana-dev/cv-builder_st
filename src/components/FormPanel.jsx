@@ -84,7 +84,7 @@ const clearAllData = () => {
                     + Добавить опыт работы
                 </button>
             </section>
-            <button onClick={clearAllData} style={{ marginTop: '15px', backgroundColor: 'red', color: 'white', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer' }}>
+            <button onClick={clearAllData} style={{ marginTop: '15px', backgroundColor: 'red', color: 'white', fontSize: '18px', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer' }}>
                 Очистить все данные
             </button>
 
