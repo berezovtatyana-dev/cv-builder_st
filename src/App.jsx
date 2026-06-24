@@ -12,7 +12,7 @@ function App() {
           </div>
         </header>
         <main>
-          <div className='Grid'>
+          <div className='grid'>
             <div className='FormPanel'>
               FormPanel
               <FormPanel />
@@ -23,10 +23,9 @@ function App() {
             </div>
           </div>
         </main>
-      
-    </div>
+      </div>
   </CVProvider>
   );
 }
 
-export default App
+export default App;

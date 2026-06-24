@@ -1,13 +1,17 @@
 .grid{
-  display: flex;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
   /* grid-row: 100px; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
 }
 .FormPanel{
-  width: 50%;
+  width: 100%;
   background-color: antiquewhite;
 }
 .PreviewPanel{
-  width: 50%;
+  width: 100%;
   background-color: aliceblue;
 }
