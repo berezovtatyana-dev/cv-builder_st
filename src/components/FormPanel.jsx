@@ -12,7 +12,12 @@ const FormPanel = () => {
             payload: {key: e.target.name, value: e.target.value}
         });
     };
-    // сделать функцию: очистить все данные
+const clearAllData = () => {
+  if (window.confirm('Вы уверены, что хотите очистить все данные?')) {
+    localStorage.removeItem('cv_data');
+    window.location.reload();
+  }
+};
     
     return (
         <div className="main-form">
@@ -79,7 +84,9 @@ const FormPanel = () => {
                     + Добавить опыт работы
                 </button>
             </section>
-
+            <button onClick={clearAllData} style={{ marginTop: '15px', backgroundColor: 'red', color: 'white', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer' }}>
+                Очистить все данные
+            </button>
 
         </div>
     );

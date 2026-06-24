@@ -1,6 +1,7 @@
 import { CVProvider } from './context/CVContext';
 import './App.css';
 import FormPanel from './components/FormPanel';
+import PreviewPanel from './components/PreviewPanel';
 
 function App() {
   return (
@@ -14,12 +15,10 @@ function App() {
         <main>
           <div className='grid'>
             <div className='FormPanel'>
-              FormPanel
               <FormPanel />
               </div>
             <div className='PreviewPanel'>
-              PreviewPanel
-              {/* <PreviewPanel /> */}
+              <PreviewPanel />
             </div>
           </div>
         </main>
