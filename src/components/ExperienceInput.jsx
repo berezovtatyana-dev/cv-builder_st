@@ -13,9 +13,18 @@ const ExperienceInput = ({ experience }) => {
             }
         });
     };
+    const handleRemove = () => {
+        if (window.confirm('Удалить эту запись об опыте работы?')) {
+            dispatch({
+                type: 'REMOVE_EXPERIENCE',
+                payload: { id: experience.id }
+            });
+        }
+    };
 
     return (
         <div style={{border: '2px solid black'}}>
+            
             <label>
                 Компания
             </label>
@@ -50,7 +59,15 @@ const ExperienceInput = ({ experience }) => {
             placeholder="2025-2026"
             />
         </div>
-
+        <button onClick={handleRemove}
+            style={{
+                backgroundColor: 'red',
+                color: 'white',
+                borderRadius: '4px',
+                padding: '4px',
+            }}
+            >Удалить запись</button>
+        
 
         </div>
     );
