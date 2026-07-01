@@ -6,6 +6,12 @@ const PreviewPanel = () => {
   const { state } = useContext(CVContext);
   const { personalInfo, education, experience } = state;
 
+  const hasEducation = education.some(edu => 
+    edu.educationCompany?.trim() !== '' || 
+    edu.profession?.trim() !== '' || 
+    edu.yearsEduc?.trim() !== ''
+  );
+
   return (
     <div className="preview-container">
       <h2>Предпросмотр резюме</h2>
@@ -25,25 +31,25 @@ const PreviewPanel = () => {
             Должность: {personalInfo.position || "—"}
           </div>
         </section>
-
-        <section className="preview-section">
-          <h3>Образование</h3>
-          {education.map((edu) => (
-             <div key={edu.id}  style={{fontSize: '14px'}}>
-                <div>
-                  Учебное заведение: {edu.educationCompany || "—"}
+        {hasEducation && (
+          <section className="preview-section">
+            <h3>Образование</h3>
+            {education.map((edu) => (
+              <div key={edu.id}  style={{fontSize: '14px'}}>
+                  <div>
+                    Учебное заведение: {edu.educationCompany || "—"}
+                  </div>
+                  <div>
+                    Специальность: {edu.profession || "—"}
+                  </div>
+                  <div>
+                    Годы обучения: {edu.yearsEduc || "—"}
+                  </div>
+                  {education.length > 1 && <hr />}
                 </div>
-                <div>
-                  Специальность: {edu.profession || "—"}
-                </div>
-                <div>
-                  Годы обучения: {edu.yearsEduc || "—"}
-                </div>
-                {education.length > 1 && <hr />}
-              </div>
-          ))}
-          </section>
-          
+            ))}
+            </section>
+        )}
 
         <section className="preview-section">
           <h3>Опыт работы</h3>
